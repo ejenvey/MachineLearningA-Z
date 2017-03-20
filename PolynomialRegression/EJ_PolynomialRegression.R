@@ -19,9 +19,9 @@ poly_reg <- lm(Salary~., data=dataset)
 library(ggplot2)
 ggplot() + geom_point(aes(x=dataset$Level , y=dataset$Salary), color="red") + 
   geom_line(aes(x=dataset$Level , y=predict(lin_reg, newdata=dataset)), color="blue") +
-ggtitle("Linear Regression of Salary and Level") +
-xlab("Level") +
-ylab("Salary")
+  ggtitle("Linear Regression of Salary and Level") +
+  xlab("Level") +
+  ylab("Salary")
 
 #Visualize the Polynomial Regression results
 library(ggplot2)
