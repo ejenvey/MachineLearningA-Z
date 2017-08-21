@@ -17,3 +17,7 @@ test_set = subset(dataset, split==FALSE)
 #training_set[,2:3] = scale(training_set[,2:3])
 #test_set[,2:3] = scale(test_set[,2:3])
 
+#Encoding categorical variables as factors
+dataset$Country = factor(dataset$Country, 
+                         levels = c("Germany", "France", "Spain"),
+                         labes = c(1,2,3))
