@@ -14,7 +14,7 @@ test_set = subset(dataset, split==FALSE)
 
 
 #Scaling the data
-training_set[,1:2] = scale(training_set[,1:1])
+training_set[,1:2] = scale(training_set[,1:2])
 test_set[,1:2] = scale(test_set[,1:2])
 
 #Fit Logistic Regression Model to the dataset

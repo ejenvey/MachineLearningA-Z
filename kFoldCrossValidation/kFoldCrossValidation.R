@@ -38,9 +38,11 @@ cv = lapply(folds, function(x) {
                     , type= 'C-classification', kernel = 'radial')
   y_pred <- predict(classifier, newdata = test_fold[-3])
   cm <- table(test_fold[,3],y_pred)
-  accuracy = cm[1,1] + cm[2,2] / (cm[1,1] + cm[2,2] + cm[1,2] + cm[2,1])
+  accuracy = (cm[1,1] + cm[2,2]) / (cm[1,1] + cm[2,2] + cm[1,2] + cm[2,1])
   return(accuracy)
 })
+
+accuracy = mean(as.numeric(cv))
 
 # Visualising the Training set results
 library(ElemStatLearn)
